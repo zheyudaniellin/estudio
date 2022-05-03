@@ -1,0 +1,49 @@
+Some tools to make basic plots for the data from edisk projects. 
+
+The working directory is where this README file is. 
+The structure should be as follows:
+- estudio (this directory)
+    - etools/
+        The directory with some key routines
+    - results
+        A directory to keep plotting results and noise estimates
+    - moments
+        A directory to keep the moment images
+    - script_*.py
+        Casa scripts to produce moment images and estimate noise
+    - plot_*.py
+        The plotting examples
+
+=================================================
+A step-by-step guide on how to begin
+=================================================
+1. Prepare necessary directories
+  (a) create a 'results' directory and a 'moments' directory within eStudio
+  (b) make sure you know where your edisk fits data is kept, including the continuum and spectral line results. This code assumes the original naming scheme from the edisk scripts (e.g., 'IRAS04302_SBLB_12CO_robust_0.5.image.fits'
+
+2. Produce the moment maps
+  Look at script_moments.py
+
+3. Produce the basic noise estimates
+  Look at script_estimate_noise.py
+
+4. Modify the routines in etools
+    There are some places where it's just easier to hard code the settings
+  (a) Within etools/kits.py, There is a section which needs hard coded input.Modify the variables 'prefix', 'dpc', and 'rawdir' for your data. 
+
+5. Start plotting
+  (a) Start with plot_example_1.py to learn how etools plots things
+  (b) Use plot_example_2.py to learn about how the rest of the plotting routines are structured and how to use the python debugging tool 'pdb'
+  (c) Look at plot_im2d_single.py to see how to plot a moment map with the continuum
+  (d) Utlimately, what we want is to automate the whole process and plot all the lines, which is done in plot_im2d_multi.py
+  (e) If we want to mask things, like for moment 1 and 9, use plot_im2d_masking.py
+  (f) If you want to look at profiles of the image, look at plot_cuts.py
+
+
+
+Quick Debugging Checklist
+- using python version 3?
+- created the directories?
+- modified etools/kits.py?
+
+
